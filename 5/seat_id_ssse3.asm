@@ -8,7 +8,6 @@ section .rodata
 section .text
 
 seat_id:
-    xor         eax, eax                ; set up return value
     movq        xmm0, qword [rdi]       ; load first 8 bytes
     pshufb      xmm0, [rel xmm_shuf]    ; reverse byte order and already shift left once
     pcmpeqb     xmm0, [rel xmm_cmp]
