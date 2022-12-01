@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-cd ${1#0}
-file="part$2.c"
-if test -f "part$2_fast.c"
-then
-    file="part$2_fast.c"
-fi
-clang -Wall -pedantic -O3 -march=native -mtune=native -flto -s -static -o ../run "part$2.c"
+set -ef
+
+cd 2022
+./prepare "$1" "$2"
+cp run ../run

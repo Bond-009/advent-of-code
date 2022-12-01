@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -ef
+
+day="$(printf '%02d' "$1")"
+file="part$2.c"
+if test -f "part$2_fast.c"
+then
+    file="part$2_fast.c"
+fi
+clang -Wall -pedantic -O3 -march=native -mtune=native -flto -s -o run "$day/$file"

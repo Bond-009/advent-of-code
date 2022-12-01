@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -ef
+
+day="$(printf '%02d' "$1")"
+nasm -f elf64 "$day/part$2.asm" -i "../utils" -o run.o
+ld run.o -o run

@@ -55,8 +55,8 @@ dkms.conf
 [Rr]elease
 [Dd]ebug
 
-# Intel VTune project dir
-aoc2020
+target/
+Cargo.lock
 
 # Executables
 part1
@@ -66,3 +66,6 @@ part2_fast
 fpart1
 fpart2
 run
+
+# inputs
+inputs/
